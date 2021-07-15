@@ -1,0 +1,31 @@
+1.String a="abc";
+  String b="abc";a==b和a.equals(b),结果都会为true,因为没有用new去新建对象,其实a和b都指向的是同一个String对象"abc"
+  改成:String a=new String("abc"),String b=new String"abc");后==的结果就是false了
+   
+2.对于基本类型来说，等号赋值就是把等号右边实际的值赋给了右边;在给对象赋值的时候，操作的是引用，所以会同时改变两个相同引用的值
+  //eg:
+  int a = 1, b = 0;
+        b = a;
+        System.out.println(a);
+        System.out.println(b);
+        a = 2;
+        System.out.println("a的值改变，并不会改变b的值:");
+        System.out.println(a);
+        System.out.println(b);
+
+  Test test1 = new Test();
+        Test test2 = new Test();
+        test1.t = 1;
+        test2.t = 2;
+        System.out.println("初始值:");
+        System.out.println(test1.t);
+        System.out.println(test2.t);
+        test1 = test2; //注意这里是把两个对象相等，不是t相等;可以自己尝试t相等会有什么结果
+        System.out.println("对象相等后的值:");
+        System.out.println(test1.t);
+        System.out.println(test2.t);
+        test2.t = 3;
+        System.out.println("改变一个值之后,另一个也有影响:");
+        System.out.println(test1.t);
+        System.out.println(test2.t);
+3.
